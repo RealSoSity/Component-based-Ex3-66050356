@@ -17,7 +17,6 @@ public class LiveScoreBean implements Serializable {
     public void setScore(String scoreLine){
         String oldScore = this.scoreLine;
         this.scoreLine = scoreLine;
-
         properyChangeSupport.firePropertyChange(propertyName, oldScore, this.scoreLine);
     }
 
