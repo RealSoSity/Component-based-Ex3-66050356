@@ -2,8 +2,8 @@ import java.beans.*;
 import java.io.Serializable;
 
 public class LiveScoreBean implements Serializable {
-    private String score;
-    public static final String propertyName = "score";
+    private String scoreLine;
+    public static final String propertyName = "scoreLine";
     private PropertyChangeSupport properyChangeSupport;
 
     public LiveScoreBean(){
@@ -11,14 +11,14 @@ public class LiveScoreBean implements Serializable {
     }
 
     public String getScore(){
-        return this.score;
+        return this.scoreLine;
     }
 
-    public void setScore(String score){
-        String oldScore = this.score;
-        this.score = score;
+    public void setScore(String scoreLine){
+        String oldScore = this.scoreLine;
+        this.scoreLine = scoreLine;
 
-        properyChangeSupport.firePropertyChange(propertyName, oldScore, this.score);
+        properyChangeSupport.firePropertyChange(propertyName, oldScore, this.scoreLine);
     }
 
     public void addPropertyChangeListener(PropertyChangeListener listener){
